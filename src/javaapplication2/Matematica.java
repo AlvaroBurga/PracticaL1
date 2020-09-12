@@ -2,19 +2,19 @@ package javaapplication2;
 
 public class Matematica {
 
-    public void primo(){
+    static public void primo(){
 
     }
 
-    public void mcd(){
+    static public void mcd(){
 
     }
 
-    public void fibonacci(){
+    static public void fibonacci(){
 
     }
 
-    public void factorial(){
+    static public void factorial(){
 
     }
 
