@@ -19,9 +19,10 @@ public class JavaApplication2 {
     public static void main(String[] args) {
         // TODO code application logic here
 
-         Scanner sc= new Scanner(System.in);
+       Scanner sc= new Scanner(System.in);
        boolean end = false;
        Matematica matematica = new Matematica();
+
        System.out.println("--- Bienvenido ---");
        System.out.println("seleccione la aplicación que desee utilizar:");
        System.out.println("1) Operaciones con numeros");
@@ -32,7 +33,7 @@ public class JavaApplication2 {
        if (b == 1){
            while(true)
            {
-               System.out.println("seleccione la operación que desee utilizar:");
+               System.out.println("seleccione la operación que desee realizar:");
                System.out.println("1) Verificar si el número es primo");
                System.out.println("2) MCD");
                System.out.println("3) Fibonacci");
@@ -40,15 +41,59 @@ public class JavaApplication2 {
                System.out.println("Opcion : ");
 
                String a=sc.nextLine();
-               System.out.println(a);
                switch(a)
                {
                    case "1":
                    {
+                       System.out.println("Ingrese su numero");
+                       String nums = sc.nextLine();
+                       try
+                       {
+                           int num = Integer.parseInt(nums);
+                           if(num > 0)
+                           {
+
+                               if(Matematica.primo(num)) System.out.println("El numero" + num + "es primo");
+                               else System.out.println("El numero " + num + " no es primo");
+                           }
+                           else
+                           {
+                               System.out.println("El numero debe ser entero positivo");
+                           }
+
+                       }catch(NumberFormatException e)
+                       {
+                           System.out.println("Debe ingresar un numero entero positivo");
+                       }
+
+
                        break;
                    }
                    case "2":
                    {
+                       System.out.println("Ingrese su primer numero");
+                       String nums1 = sc.nextLine();
+                       System.out.println("Ingrese su segundo numero");
+                       String nums2 = sc.nextLine();
+                       try
+                       {
+                           int num1 = Integer.parseInt(nums1);
+                           int num2 = Integer.parseInt(nums2);
+                           if(num1 > 0 && num2>0)
+                           {
+
+                               System.out.println("El minimo comun divizor"
+                                       + " es: " + Matematica.mcd(num1, num2));
+                           }
+                           else
+                           {
+                               System.out.println("Los numeros deben ser enteros positivos");
+                           }
+
+                       }catch(NumberFormatException e)
+                       {
+                           System.out.println("Debe ingresar un numeros enteros positivos");
+                       }
                        break;
                    }
                    case "3":
