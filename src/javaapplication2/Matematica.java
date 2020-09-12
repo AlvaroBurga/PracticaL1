@@ -39,8 +39,14 @@ public class Matematica {
 
     }
 
-    static public void factorial(){
+    public void factorial(int numero){
+        double facto = 1;
+        while ( numero!=0) {
+            facto=facto*numero;
+            numero--;
+        }
 
+        System.out.println("El factorial es: " + facto);
     }
 
 }

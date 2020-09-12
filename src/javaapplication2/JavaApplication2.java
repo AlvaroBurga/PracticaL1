@@ -21,6 +21,7 @@ public class JavaApplication2 {
 
        Scanner sc= new Scanner(System.in);
        boolean end = false;
+       Matematica matematica = new Matematica();
        while(true)
        {
             String a=sc.nextLine();
@@ -87,7 +88,23 @@ public class JavaApplication2 {
                 }
                 case "4":
                 {
-                    break;
+                    while (true){
+                        System.out.println("Ingrese un número: ");
+                        String  num = sc.nextLine();
+
+                        try {
+                            int n = Integer.parseInt(num);
+                            if (n > 0){
+                                matematica.factorial(n);
+                            }else {
+                                System.out.println("Debe ingresar un número positivo");
+                            }
+                        }catch (Exception e){
+                            System.out.println("Ingrese un número válido (entero positivo)");
+                        }
+                        break;
+                    }
+
                 }
                 default:
                 {
