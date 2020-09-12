@@ -9,7 +9,7 @@ import java.util.Scanner;
 
 /**
  *
- * @author Alvaro
+ * @author Alvaro y marcelo y samuel
  */
 public class JavaApplication2 {
 
@@ -19,12 +19,13 @@ public class JavaApplication2 {
     public static void main(String[] args) {
         // TODO code application logic here
 
-         Scanner sc= new Scanner(System.in);
+         Scanner sc = new Scanner(System.in);
        boolean end = false;
        while(true)
        {
-            String a=sc.nextLine();
-            System.out.println(a);
+           System.out.println("(3) para la serie de Fibonacci ");
+           System.out.println("Ingrese su opción del menu : ");
+           String a=sc.nextLine();
             switch(a)
             {
                 case "1":
@@ -37,6 +38,40 @@ public class JavaApplication2 {
                 }
                 case "3":
                 {
+                    while(true){
+                        try{
+                            System.out.println("Ingrese un numero 'n' para la serie:");
+                            String n = sc.nextLine();
+                            System.out.println("La serie fibonacci de "+n+" números es:");
+                            Matematica m = new Matematica();
+                            switch(n)
+                            {
+                                case "0":
+                                {
+                                    System.out.println("");
+                                    break;
+                                }
+                                case "1":
+                                {
+                                    System.out.println(" 0 ");
+                                    break;
+                                }
+                                default:
+                                {
+                                    int b = Integer.parseInt(n);
+                                    m.fibonacci(b);
+                                    break;
+                                }
+                            }
+                            break;
+                        }catch(NumberFormatException e){
+                            System.out.println("Ingrese un número!!");
+                        }
+                        
+                    }
+                    
+                    
+                    System.out.println(" ");
                     break;
 
                 }
